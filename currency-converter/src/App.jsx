@@ -1,10 +1,13 @@
-import { CurrencyConvert } from "./CurrencyConvert";
+import { CurrencyConverter } from "./Components/CurrencyConverter";
+import "./App.css"
 
 const App = () =>{
   return(
-    <>
-    <CurrencyConvert/>
-    </>
+  <>
+  <CurrencyConverter/>
+  </>
+    
+   
   )
 }
 export default App;
