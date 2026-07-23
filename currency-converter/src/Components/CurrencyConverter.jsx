@@ -22,6 +22,7 @@ const convertedAmount= from===to?amount :data?.rates?.[to.toUpperCase()]
 
   return (
     <div className="converter">
+        <span className="live-exchange">LIVE EXCHANGE</span>
       <h1>CURRENCY CONVERTER</h1>
       <input
         type="number"
