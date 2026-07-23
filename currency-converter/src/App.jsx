@@ -1,4 +1,4 @@
-import { CurrencyConverter } from "./Components/CurrencyConverter";
+import { CurrencyConverter } from "./Components/Layout/CurrencyConverter";
 import "./App.css"
 
 const App = () =>{

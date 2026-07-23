@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchCurrency } from "../API/Api";
+import { fetchCurrency } from "../../API/Api";
 
 export const CurrencyConverter = () => {
   const [amount, setAmount] = useState("");
