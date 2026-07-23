@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchCurrency } from "../../API/Api";
+import { Loading } from "../Ui/Loading";
 
 export const CurrencyConverter = () => {
   const [amount, setAmount] = useState("");
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [shouldConvert, setShouldConvert] = useState(false);
+  // const [shouldConvert, setShouldConvert] = useState(false);
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError, error,refetch } = useQuery({
     queryKey: ["currency", amount, from, to],
     queryFn: fetchCurrency,
-    enabled: shouldConvert,
+    enabled: false,
   });
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Loading/>;
   if (isError) return <h1>Error...{error.message}</h1>;
   const handleChange = () => {
-    setShouldConvert(true);
+    refetch();
   };
 const convertedAmount= from===to?amount :data?.rates?.[to.toUpperCase()]
 
